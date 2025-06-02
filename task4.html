@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Task 4 - Portfolio</title>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: orange;
+      --bg: white;
+      --text: black;
+      --accent: #222;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      background: var(--primary);
+      color: white;
+      padding: 30px 0;
+      text-align: center;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .about, .projects, .contact {
+      margin-bottom: 40px;
+    }
+
+    .project-card {
+      border: 2px solid var(--primary);
+      padding: 20px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      background-color: #f9f9f9;
+    }
+
+    footer {
+      background: var(--accent);
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-family: 'Inter', sans-serif;
+    }
+
+    button {
+      background: black;
+      color: white;
+      border: none;
+      padding: 12px;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: var(--primary);
+      color: black;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Arekuti Jathin Reddy</h1>
+    <p>Web Developer | Intern at ApexPlanet</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm a passionate web development intern learning HTML, CSS, and JavaScript. I'm excited to build beautiful, functional websites and contribute to meaningful projects. This portfolio is part of my internship journey with ApexPlanet.</p>
+  </section>
+
+  <section id="projects" class="projects">
+    <h2>Projects</h2>
+    
+    <div class="project-card">
+      <h3>Task 1: Basic Web Page</h3>
+      <p>Created a simple web page using HTML, CSS, and JavaScript with a clean layout and interactive elements.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Task 2: Contact Form & Image Gallery</h3>
+      <p>Designed a responsive contact form with form validation and a dynamic image gallery using JavaScript.</p>
+    </div>
+
+    <div class="project-card">
+      <h3>Task 3: Quiz and API Fetch</h3>
+      <p>Built an interactive JavaScript quiz and fetched real-time data from a public API using fetch().</p>
+    </div>
+
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Me</h2>
+    <form onsubmit="submitForm(event)">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+    <p id="msg" style="margin-top: 10px;"></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 [Your Name] | ApexPlanet Internship</p>
+  </footer>
+
+  <script>
+    function submitForm(e) {
+      e.preventDefault();
+      document.getElementById('msg').textContent = "✅ Message sent successfully!";
+      setTimeout(() => document.getElementById('msg').textContent = '', 3000);
+    }
+  </script>
+
+</body>
+</html>
